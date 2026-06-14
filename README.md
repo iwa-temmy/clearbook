@@ -245,25 +245,28 @@ Built on Tailwind v3 with custom color tokens (`primary`, `background`, `foregro
 
 ## What I'd Do Differently
 
-**1. Data layer before UI.**
-Every metric in this UI is a hardcoded constant. A real version starts with server actions + React Query hooks wired to actual bank data (Mono or Plaid), so components fetch live data from day one rather than being retrofitted.
+**1. Proper Authentication flow.**
+Due to time constraints, I couldn't build a proper authentication system but under better circumstances, I will build a proper authentication system with Clerk which properly handles the security issues with Authentication.
 
-**2. Health score as a real algorithm.**
+**2. Data layer before UI.**
+Every metric in this UI is a hardcoded constant. A real version starts with server actions + React Query hooks wired to actual bank data via (paystack, bank apis), so components fetch live data from day one rather than being retrofitted. I will also try to use sanity for the backend
+
+**3. Health score as a real algorithm.**
 The `87` is a constant. A real score is a weighted function of: cash runway in days (heaviest weight), overdue invoice ratio, expense growth month-over-month, and upcoming obligations in a 14-day window. That makes the dashboard the most defensible feature.
 
-**3. Mobile-first shell.**
+**4. Mobile-first shell.**
 The product vision targets busy owners checking finances between tasks. The current layout is desktop-centric. It should be a PWA with a bottom-nav mobile shell. The WhatsApp-style daily prompt — the most differentiated feature in the spec — is not built. That is the core retention loop and should have been the first screen designed.
 
-**4. Forecast chart wired to real projections.**
+**5. Forecast chart wired to real projections.**
 The chart renders static data with a reference line. A real implementation takes recurring transaction patterns, projects them forward, and flags risk zones automatically. The chart component should accept a dynamic data contract, not static points.
 
-**5. Empty states.**
+**6. Empty states.**
 Every screen assumes populated data. A production-ready product needs zero-state UX: guided setup prompt, connect-account CTA, skeleton loaders. Without it the onboarding drop-off is immediate.
 
-**6. Accessibility.**
+**7. Accessibility.**
 Custom components — filter pills, sidebar nav, the health score chart — have no ARIA labels, focus management, or keyboard navigation. This would be required before any real user testing.
 
-**7. Test coverage.**
+**8. Test coverage.**
 Jest is configured but tests are placeholders. Priority would be integration tests for transaction filter/sort logic and unit tests for any scoring functions — those are the most likely to regress silently as the data layer evolves.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
