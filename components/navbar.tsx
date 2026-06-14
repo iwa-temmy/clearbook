@@ -10,8 +10,8 @@ import {
 } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
-// import { SidebarTrigger } from "@/components/ui/sidebar";
-// import { Separator } from "@/components/ui/separator";
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { Separator } from "@/components/ui/separator";
 import { DateRange } from "react-day-picker";
 import { DatePickerWithRange } from "./ui/date-range-picker";
 
@@ -20,8 +20,8 @@ const Navbar = () => {
   const [date, setDate] = React.useState<DateRange | null>(null);
   return (
     <header className="flex h-16 shrink-0 items-center gap-4 border-b border-sidebar-border px-6">
-      {/* <SidebarTrigger className="-ml-1 text-gray-400 hover:text-gray-100" /> */}
-      {/* <Separator orientation="vertical" className="h-4 bg-sidebar-border" /> */}
+      <SidebarTrigger className="-ml-1 text-gray-400 hover:text-gray-100 block lg:hidden" />
+      <Separator orientation="vertical" className="h-4 bg-sidebar-border block lg:hidden" />
 
       <div className="flex flex-1 max-w-sm">
         <Input

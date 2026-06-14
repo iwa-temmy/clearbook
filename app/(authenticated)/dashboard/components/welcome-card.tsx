@@ -58,12 +58,12 @@ function HealthScoreChart() {
 export default function WelcomeCard() {
   return (
     <Card className="bg-gradient border-0">
-      <CardContent className="p-6 space-y-8">
+      <CardContent className="p-4 lg:p-6 space-y-8">
         <div className="grid grid-cols-[1fr_auto] items-start gap-6">
           <div>
-            <p className="text-xs text-white dark:text-gray-500">Monday, June 8, 2026</p>
+            <p className="text-xs text-white dark:text-gray-500">Monday, June 14, 2026</p>
             <h1 className="mt-1 text-2xl font-bold text-white tracking-tight">
-              Good morning, Sarah. 👋
+              Good morning, Olawale. 👋
             </h1>
             <p className="mt-1 text-sm text-white dark:text-gray-400">
               Your business is{" "}
