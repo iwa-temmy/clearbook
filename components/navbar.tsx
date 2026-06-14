@@ -7,8 +7,16 @@ import {
   // Sun,
   // Moon,
   Bell,
+  LogOut,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
@@ -18,6 +26,7 @@ import { DatePickerWithRange } from "./ui/date-range-picker";
 const Navbar = () => {
   //   const { theme, setTheme } = useTheme();
   const [date, setDate] = React.useState<DateRange | null>(null);
+  const router = useRouter();
   return (
     <header className="flex h-16 shrink-0 items-center gap-4 border-b border-sidebar-border px-6">
       <SidebarTrigger className="-ml-1 text-gray-400 hover:text-gray-100 block lg:hidden" />
@@ -60,11 +69,21 @@ const Navbar = () => {
           <span className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-amber-400" />
         </button>
 
-        <Avatar className="h-8 w-8">
-          <AvatarFallback className="bg-primary text-white text-xs font-semibold">
-            SC
-          </AvatarFallback>
-        </Avatar>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Avatar className="h-8 w-8 cursor-pointer">
+              <AvatarFallback className="bg-primary text-white text-xs font-semibold">
+                SC
+              </AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem onClick={() => router.push("/auth/login")}>
+              <LogOut className="h-4 w-4" />
+              Log out
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </header>
   );

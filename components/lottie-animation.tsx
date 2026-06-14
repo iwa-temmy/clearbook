@@ -6,6 +6,7 @@ const LottieAnimation = ({
   animationData,
   height = "unset",
 }: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   animationData: any;
   height?: number | string;
 }) => {

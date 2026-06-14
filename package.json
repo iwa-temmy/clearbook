@@ -1,5 +1,5 @@
 {
-  "name": "yv-nextjs-template",
+  "name": "clearbook",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
   "dependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
+    "@hookform/resolvers": "^5.4.0",
     "@radix-ui/react-avatar": "^1.1.12",
     "@radix-ui/react-collapsible": "^1.1.13",
     "@radix-ui/react-dialog": "^1.1.16",
@@ -38,9 +39,11 @@
     "react": "^18.3.1",
     "react-day-picker": "^10.0.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.79.0",
     "recharts": "^3.8.1",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
